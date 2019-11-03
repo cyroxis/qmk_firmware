@@ -34,15 +34,15 @@ enum macro_keycodes {
 };
 
 // Custom hold modifiers
-#define LG(kc) LGUI(kc)
-#define LA(kc) LALT(kc)
-#define LC(kc) LCTL(kc)
-#define LS(kc) LSFT(kc)
+#define LG(kc) LGUI_T(kc)
+#define LA(kc) LALT_T(kc)
+#define LC(kc) LCTL_T(kc)
+#define LS(kc) LSFT_T(kc)
 
-#define RG(kc) RGUI(kc)
-#define RA(kc) RALT(kc)
-#define RC(kc) RCTL(kc)
-#define RS(kc) RSFT(kc)
+#define RG(kc) RGUI_T(kc)
+#define RA(kc) RALT_T(kc)
+#define RC(kc) RCTL_T(kc)
+#define RS(kc) RSFT_T(kc)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT( \
