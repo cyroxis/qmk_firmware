@@ -1,4 +1,6 @@
 #include QMK_KEYBOARD_H
+#include <stdio.h>
+#include "crkbd.h"
 
 extern keymap_config_t keymap_config;
 
@@ -28,6 +30,12 @@ enum custom_keycodes {
   BACKLIT,
   RGBRST
 };
+
+#define L_BASE 0
+#define L_LOWER (1U << _LOWER)
+#define L_RAISE (1U << _RAISE)
+#define L_MOVE (1U << _MOVE)
+#define L_ADJUST (1U << _ADJUST)
 
 enum macro_keycodes {
   KC_SAMPLEMACRO,
@@ -248,4 +256,24 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       break;
   }
   return true;
+}
+
+char layer_state_str[24];
+
+const char *read_layer_state(void) {
+  if (L_ADJUST & layer_state) {
+    snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Adjust");
+  } else if (L_MOVE & layer_state) {
+    snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Move");
+  } else if (L_LOWER & layer_state) {
+    snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Lower");
+  } else if (L_RAISE & layer_state) {
+    snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Raise");
+  } else if (L_BASE == layer_state) {
+    snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Default");
+  } else {
+    snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Undef-%ld", layer_state);
+  }
+
+  return layer_state_str;
 }
