@@ -61,7 +61,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|-----------+-----------+-----------+-----------+-----------+-----------|      |-----------+-----------+-----------+-----------+-----------+-----------|
      KC_LSFT,    LC(KC_Z),   KC_X,       KC_C,       KC_V,       KC_B,              KC_N,       KC_M,       KC_COMM,    KC_DOT,     RC(KC_SLSH),KC_SFTENT, \
   //|-----------+-----------+-----------+-----------+-----------+-----------|      |-----------+-----------+-----------+-----------+-----------+-----------|
-                                         KC_LGUI,    LOWER,      KC_ENT,            KC_SPC,     RAISE,      MOVE       \
+                                         KC_LGUI,    LOWER,      KC_SPC,            KC_SPC,     RAISE,      MOVE        \
   //                                    |-----------+-----------+-----------|      |-----------+-----------+-----------|
   ),
 
@@ -73,7 +73,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|-----------+-----------+-----------+-----------+-----------+-----------|      |-----------+-----------+-----------+-----------+-----------+-----------|  
      KC_TRNS,    KC_PERC,    KC_CIRC,    KC_LCBR,    KC_RCBR,    KC_BSLS,           KC_PDOT,    KC_1,       KC_2,       KC_3,       KC_PEQL,    KC_TRNS,   \
   //|-----------+-----------+-----------+-----------+-----------+-----------|      |-----------+-----------+-----------+-----------+-----------+-----------|
-                                         KC_TRNS,    KC_TRNS,    KC_TRNS,           KC_TRNS,    KC_TRNS,    KC_0       \
+                                        KC_TRNS,    KC_TRNS,    KC_TRNS,           KC_TRNS,    KC_TRNS,    KC_0        \
   //                                    |-----------+-----------+-----------|      |-----------+-----------+-----------|
   ),
 
@@ -85,7 +85,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|-----------+-----------+-----------+-----------+-----------+-----------|      |-----------+-----------+-----------+-----------+-----------+-----------|
      KC_TRNS,    KC_F9,      KC_F10,     KC_F11,     KC_F12,     KC_TRNS,           KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,   \
   //|-----------+-----------+-----------+-----------+-----------+-----------|      |-----------+-----------+-----------+-----------+-----------+-----------|
-                                         KC_TRNS,    KC_TRNS,    KC_TRNS,           KC_TRNS,    KC_TRNS,    KC_TRNS    \
+                                        KC_TRNS,    KC_TRNS,    KC_TRNS,           KC_TRNS,    KC_TRNS,    KC_TRNS     \
   //                                    |-----------+-----------+-----------|      |-----------+-----------+-----------|
   ),
 
@@ -93,7 +93,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|-----------+-----------+-----------+-----------+-----------+-----------|      |-----------+-----------+-----------+-----------+-----------+-----------|
      KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,           KC_TRNS,    KC_HOME,    KC_PGUP,    KC_PGDN,    KC_END,     KC_DELETE, \
   //|-----------+-----------+-----------+-----------+-----------+-----------|      |-----------+-----------+-----------+-----------+-----------+-----------|
-     KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,           KC_TRNS,    KC_LEFT,    KC_DOWN,    KC_UP,      KC_RIGHT,   KC_TRNS,   \
+     KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,           A(KC_LEFT), KC_LEFT,    KC_DOWN,    KC_UP,      KC_RIGHT,   A(KC_RIGHT),   \
   //|-----------+-----------+-----------+-----------+-----------+-----------|      |-----------+-----------+-----------+-----------+-----------+-----------|
      KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,           KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,   \
   //|-----------+-----------+-----------+-----------+-----------+-----------|      |-----------+-----------+-----------+-----------+-----------+-----------|
@@ -156,7 +156,7 @@ const char *read_keylogs(void);
 // const char *read_timelog(void);
 
 void matrix_scan_user(void) {
-   iota_gfx_task();
+  iota_gfx_task();
 }
 
 void matrix_render_user(struct CharacterMatrix *matrix) {
