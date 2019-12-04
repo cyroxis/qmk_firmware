@@ -48,6 +48,7 @@ enum macro_keycodes {
 #define LC(kc) LCTL_T(kc)
 #define LS(kc) LSFT_T(kc)
 
+
 #define RG(kc) RGUI_T(kc)
 #define RA(kc) RALT_T(kc)
 #define RC(kc) RCTL_T(kc)
